@@ -1,0 +1,3 @@
+id	idol	ymarry
+1	사나	26
+2	차은우	26
