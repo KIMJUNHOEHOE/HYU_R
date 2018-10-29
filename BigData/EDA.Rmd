@@ -1,0 +1,47 @@
+---
+title: "EDA"
+author: "KimJunHoe"
+date: "2018년 10월 12일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. 일변량 질적 자료의 분석
+<br>
+
+## 1.1 표
+### (1) 빈도
+<br>
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+sort(table(diamonds$cut), decreasing = TRUE)
+```
+
+```{r echo=FALSE}
+sort(table(diamonds$cut), decreasing = TRUE)
+```
+
+## 1.2 그래프
+### (1) 막대그래프
+```{r}
+barplot(sort(table(diamonds$cut), decreasing = TRUE),
+        col = "purple",
+        main = "Cut of Diamonds",
+        ylab = "Frequency",
+        ylim = c(0, 25000)
+        )
+```
+
+<br>
+막대그래프의 현황을 보면, "Ideal"이 가장 많다.
+
+<br>
+price의 평균은 `r mean(diamonds$price)` 이다.
